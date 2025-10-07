@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
-export const Media: CollectionConfig = {
-  slug: 'media',
+export const Images: CollectionConfig = {
+  slug: 'images',
   access: {
     read: () => true,
   },
