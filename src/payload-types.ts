@@ -151,6 +151,7 @@ export interface Image {
   prefix?: string | null;
   updatedAt: string;
   createdAt: string;
+  _status?: ('draft' | 'published') | null;
   url?: string | null;
   thumbnailURL?: string | null;
   filename?: string | null;
@@ -249,6 +250,7 @@ export interface ImagesSelect<T extends boolean = true> {
   prefix?: T;
   updatedAt?: T;
   createdAt?: T;
+  _status?: T;
   url?: T;
   thumbnailURL?: T;
   filename?: T;
