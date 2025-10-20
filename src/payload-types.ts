@@ -85,10 +85,18 @@ export interface Config {
     defaultIDType: number;
   };
   globals: {
-    firstPage: FirstPage;
+    startPage: StartPage;
+    aboutUs: AboutUs;
+    info: Info;
+    Osa: Osa;
+    Speech: Speech;
   };
   globalsSelect: {
-    firstPage: FirstPageSelect<false> | FirstPageSelect<true>;
+    startPage: StartPageSelect<false> | StartPageSelect<true>;
+    aboutUs: AboutUsSelect<false> | AboutUsSelect<true>;
+    info: InfoSelect<false> | InfoSelect<true>;
+    Osa: OsaSelect<false> | OsaSelect<true>;
+    Speech: SpeechSelect<false> | SpeechSelect<true>;
   };
   locale: null;
   user: User & {
@@ -295,22 +303,355 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "firstPage".
+ * via the `definition` "startPage".
  */
-export interface FirstPage {
+export interface StartPage {
   id: number;
-  firstPageTitle?: string | null;
-  firstPageSubTitle?: string | null;
+  startPageTitle?: string | null;
+  startPageSubTitle?: string | null;
+  startPagePosts?:
+    | {
+        blockTitle?: string | null;
+        blockTitlealignment?: ('textAlginmentRight' | 'textAlginmentCenter' | 'textAlginmentLeft') | null;
+        blockTitleStyle?: ('textStyleNormal' | 'textStyleItalic' | 'textStyleBold') | null;
+        blockSubtitle?: string | null;
+        blockSubtitlealignment?: ('textAlginmentRight' | 'textAlginmentCenter' | 'textAlginmentLeft') | null;
+        blockSubtitleStyle?: ('textStyleNormal' | 'textStyleItalic' | 'textStyleBold') | null;
+        blockText?: string | null;
+        blockTextalignment?: ('textAlginmentRight' | 'textAlginmentCenter' | 'textAlginmentLeft') | null;
+        blockTextStyle?: ('textStyleNormal' | 'textStyleItalic' | 'textStyleBold') | null;
+        blockImage?: (number | null) | Image;
+        /**
+         * In "Full width", the image will be rendered above the text. On mobile, the image will always be displayed in the same layout as in full width.
+         */
+        blockImageSetting?: ('fullWidth' | 'rightSide' | 'leftSide') | null;
+        linkBtn?: ('startPage' | 'aboutUsPage' | 'infoPage' | 'osaPage' | 'speechPage') | null;
+        linkBtnText?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  data?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "firstPage_select".
+ * via the `definition` "aboutUs".
  */
-export interface FirstPageSelect<T extends boolean = true> {
-  firstPageTitle?: T;
-  firstPageSubTitle?: T;
+export interface AboutUs {
+  id: number;
+  aboutUsTitle?: string | null;
+  aboutUsSubTitle?: string | null;
+  aboutUsPosts?:
+    | {
+        blockTitle?: string | null;
+        blockTitlealignment?: ('textAlginmentRight' | 'textAlginmentCenter' | 'textAlginmentLeft') | null;
+        blockTitleStyle?: ('textStyleNormal' | 'textStyleItalic' | 'textStyleBold') | null;
+        blockSubtitle?: string | null;
+        blockSubtitlealignment?: ('textAlginmentRight' | 'textAlginmentCenter' | 'textAlginmentLeft') | null;
+        blockSubtitleStyle?: ('textStyleNormal' | 'textStyleItalic' | 'textStyleBold') | null;
+        blockText?: string | null;
+        blockTextalignment?: ('textAlginmentRight' | 'textAlginmentCenter' | 'textAlginmentLeft') | null;
+        blockTextStyle?: ('textStyleNormal' | 'textStyleItalic' | 'textStyleBold') | null;
+        blockImage?: (number | null) | Image;
+        /**
+         * In "Full width", the image will be rendered above the text. On mobile, the image will always be displayed in the same layout as in full width.
+         */
+        blockImageSetting?: ('fullWidth' | 'rightSide' | 'leftSide') | null;
+        linkBtn?: ('startPage' | 'aboutUsPage' | 'infoPage' | 'osaPage' | 'speechPage') | null;
+        linkBtnText?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  data?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "info".
+ */
+export interface Info {
+  id: number;
+  infoTitle?: string | null;
+  infoSubTitle?: string | null;
+  infoPosts?:
+    | {
+        blockTitle?: string | null;
+        blockTitlealignment?: ('textAlginmentRight' | 'textAlginmentCenter' | 'textAlginmentLeft') | null;
+        blockTitleStyle?: ('textStyleNormal' | 'textStyleItalic' | 'textStyleBold') | null;
+        blockSubtitle?: string | null;
+        blockSubtitlealignment?: ('textAlginmentRight' | 'textAlginmentCenter' | 'textAlginmentLeft') | null;
+        blockSubtitleStyle?: ('textStyleNormal' | 'textStyleItalic' | 'textStyleBold') | null;
+        blockText?: string | null;
+        blockTextalignment?: ('textAlginmentRight' | 'textAlginmentCenter' | 'textAlginmentLeft') | null;
+        blockTextStyle?: ('textStyleNormal' | 'textStyleItalic' | 'textStyleBold') | null;
+        blockImage?: (number | null) | Image;
+        /**
+         * In "Full width", the image will be rendered above the text. On mobile, the image will always be displayed in the same layout as in full width.
+         */
+        blockImageSetting?: ('fullWidth' | 'rightSide' | 'leftSide') | null;
+        linkBtn?: ('startPage' | 'aboutUsPage' | 'infoPage' | 'osaPage' | 'speechPage') | null;
+        linkBtnText?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  data?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Osa".
+ */
+export interface Osa {
+  id: number;
+  OsaTitle?: string | null;
+  OsaSubTitle?: string | null;
+  OsaPosts?:
+    | {
+        blockTitle?: string | null;
+        blockTitlealignment?: ('textAlginmentRight' | 'textAlginmentCenter' | 'textAlginmentLeft') | null;
+        blockTitleStyle?: ('textStyleNormal' | 'textStyleItalic' | 'textStyleBold') | null;
+        blockSubtitle?: string | null;
+        blockSubtitlealignment?: ('textAlginmentRight' | 'textAlginmentCenter' | 'textAlginmentLeft') | null;
+        blockSubtitleStyle?: ('textStyleNormal' | 'textStyleItalic' | 'textStyleBold') | null;
+        blockText?: string | null;
+        blockTextalignment?: ('textAlginmentRight' | 'textAlginmentCenter' | 'textAlginmentLeft') | null;
+        blockTextStyle?: ('textStyleNormal' | 'textStyleItalic' | 'textStyleBold') | null;
+        blockImage?: (number | null) | Image;
+        /**
+         * In "Full width", the image will be rendered above the text. On mobile, the image will always be displayed in the same layout as in full width.
+         */
+        blockImageSetting?: ('fullWidth' | 'rightSide' | 'leftSide') | null;
+        linkBtn?: ('startPage' | 'aboutUsPage' | 'infoPage' | 'osaPage' | 'speechPage') | null;
+        linkBtnText?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  data?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Speech".
+ */
+export interface Speech {
+  id: number;
+  SpeechTitle?: string | null;
+  SpeechSubTitle?: string | null;
+  SpeechPosts?:
+    | {
+        blockTitle?: string | null;
+        blockTitlealignment?: ('textAlginmentRight' | 'textAlginmentCenter' | 'textAlginmentLeft') | null;
+        blockTitleStyle?: ('textStyleNormal' | 'textStyleItalic' | 'textStyleBold') | null;
+        blockSubtitle?: string | null;
+        blockSubtitlealignment?: ('textAlginmentRight' | 'textAlginmentCenter' | 'textAlginmentLeft') | null;
+        blockSubtitleStyle?: ('textStyleNormal' | 'textStyleItalic' | 'textStyleBold') | null;
+        blockText?: string | null;
+        blockTextalignment?: ('textAlginmentRight' | 'textAlginmentCenter' | 'textAlginmentLeft') | null;
+        blockTextStyle?: ('textStyleNormal' | 'textStyleItalic' | 'textStyleBold') | null;
+        blockImage?: (number | null) | Image;
+        /**
+         * In "Full width", the image will be rendered above the text. On mobile, the image will always be displayed in the same layout as in full width.
+         */
+        blockImageSetting?: ('fullWidth' | 'rightSide' | 'leftSide') | null;
+        linkBtn?: ('startPage' | 'aboutUsPage' | 'infoPage' | 'osaPage' | 'speechPage') | null;
+        linkBtnText?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  data?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "startPage_select".
+ */
+export interface StartPageSelect<T extends boolean = true> {
+  startPageTitle?: T;
+  startPageSubTitle?: T;
+  startPagePosts?:
+    | T
+    | {
+        blockTitle?: T;
+        blockTitlealignment?: T;
+        blockTitleStyle?: T;
+        blockSubtitle?: T;
+        blockSubtitlealignment?: T;
+        blockSubtitleStyle?: T;
+        blockText?: T;
+        blockTextalignment?: T;
+        blockTextStyle?: T;
+        blockImage?: T;
+        blockImageSetting?: T;
+        linkBtn?: T;
+        linkBtnText?: T;
+        id?: T;
+      };
+  data?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "aboutUs_select".
+ */
+export interface AboutUsSelect<T extends boolean = true> {
+  aboutUsTitle?: T;
+  aboutUsSubTitle?: T;
+  aboutUsPosts?:
+    | T
+    | {
+        blockTitle?: T;
+        blockTitlealignment?: T;
+        blockTitleStyle?: T;
+        blockSubtitle?: T;
+        blockSubtitlealignment?: T;
+        blockSubtitleStyle?: T;
+        blockText?: T;
+        blockTextalignment?: T;
+        blockTextStyle?: T;
+        blockImage?: T;
+        blockImageSetting?: T;
+        linkBtn?: T;
+        linkBtnText?: T;
+        id?: T;
+      };
+  data?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "info_select".
+ */
+export interface InfoSelect<T extends boolean = true> {
+  infoTitle?: T;
+  infoSubTitle?: T;
+  infoPosts?:
+    | T
+    | {
+        blockTitle?: T;
+        blockTitlealignment?: T;
+        blockTitleStyle?: T;
+        blockSubtitle?: T;
+        blockSubtitlealignment?: T;
+        blockSubtitleStyle?: T;
+        blockText?: T;
+        blockTextalignment?: T;
+        blockTextStyle?: T;
+        blockImage?: T;
+        blockImageSetting?: T;
+        linkBtn?: T;
+        linkBtnText?: T;
+        id?: T;
+      };
+  data?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Osa_select".
+ */
+export interface OsaSelect<T extends boolean = true> {
+  OsaTitle?: T;
+  OsaSubTitle?: T;
+  OsaPosts?:
+    | T
+    | {
+        blockTitle?: T;
+        blockTitlealignment?: T;
+        blockTitleStyle?: T;
+        blockSubtitle?: T;
+        blockSubtitlealignment?: T;
+        blockSubtitleStyle?: T;
+        blockText?: T;
+        blockTextalignment?: T;
+        blockTextStyle?: T;
+        blockImage?: T;
+        blockImageSetting?: T;
+        linkBtn?: T;
+        linkBtnText?: T;
+        id?: T;
+      };
+  data?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Speech_select".
+ */
+export interface SpeechSelect<T extends boolean = true> {
+  SpeechTitle?: T;
+  SpeechSubTitle?: T;
+  SpeechPosts?:
+    | T
+    | {
+        blockTitle?: T;
+        blockTitlealignment?: T;
+        blockTitleStyle?: T;
+        blockSubtitle?: T;
+        blockSubtitlealignment?: T;
+        blockSubtitleStyle?: T;
+        blockText?: T;
+        blockTextalignment?: T;
+        blockTextStyle?: T;
+        blockImage?: T;
+        blockImageSetting?: T;
+        linkBtn?: T;
+        linkBtnText?: T;
+        id?: T;
+      };
+  data?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

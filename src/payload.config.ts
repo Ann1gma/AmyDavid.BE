@@ -9,8 +9,12 @@ import sharpPkg from 'sharp'
 
 import { Users } from './collections/Users'
 import { Images } from './collections/Images'
-import { FirstPage } from './globals/FirstPage'
 import { s3Storage } from '@payloadcms/storage-s3'
+import { StartPage } from './globals/StartPage'
+import { AboutUsPage } from './globals/AboutUsPage'
+import { InfoPage } from './globals/InfoPage'
+import { OsaPage } from './globals/OsaPage'
+import { SpeechPage } from './globals/SpeechPage'
 
 const sharp = sharpPkg || sharpPkg
 
@@ -24,7 +28,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  globals: [FirstPage],
+  globals: [StartPage, AboutUsPage, InfoPage, OsaPage, SpeechPage],
   collections: [Users, Images],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
