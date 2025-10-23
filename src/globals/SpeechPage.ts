@@ -31,10 +31,10 @@ export const SpeechPage: GlobalConfig = {
   hooks: {
     beforeChange: [
       async ({ data, req }) => {
-        if (!data?.startPagePosts) return data
+        if (!data?.SpeechPosts) return data
 
         const enrichedPosts = await Promise.all(
-          data.startPagePosts.map(async (post: any) => {
+          data.SpeechPosts.map(async (post: any) => {
             if (post.blockImage) {
               try {
                 const imageDoc = await req.payload.findByID({
@@ -56,7 +56,7 @@ export const SpeechPage: GlobalConfig = {
 
         data.data = {
           ...rest,
-          startPagePosts: enrichedPosts,
+          SpeechPosts: enrichedPosts,
         }
 
         return data
