@@ -31,10 +31,10 @@ export const AboutUsPage: GlobalConfig = {
   hooks: {
     beforeChange: [
       async ({ data, req }) => {
-        if (!data?.startPagePosts) return data
+        if (!data?.aboutUsPosts) return data
 
         const enrichedPosts = await Promise.all(
-          data.startPagePosts.map(async (post: any) => {
+          data.aboutUsPosts.map(async (post: any) => {
             if (post.blockImage) {
               try {
                 const imageDoc = await req.payload.findByID({
@@ -56,7 +56,7 @@ export const AboutUsPage: GlobalConfig = {
 
         data.data = {
           ...rest,
-          startPagePosts: enrichedPosts,
+          aboutUsPosts: enrichedPosts,
         }
 
         return data

@@ -31,10 +31,10 @@ export const OsaPage: GlobalConfig = {
   hooks: {
     beforeChange: [
       async ({ data, req }) => {
-        if (!data?.startPagePosts) return data
+        if (!data?.OsaPosts) return data
 
         const enrichedPosts = await Promise.all(
-          data.startPagePosts.map(async (post: any) => {
+          data.OsaPosts.map(async (post: any) => {
             if (post.blockImage) {
               try {
                 const imageDoc = await req.payload.findByID({
@@ -56,7 +56,7 @@ export const OsaPage: GlobalConfig = {
 
         data.data = {
           ...rest,
-          startPagePosts: enrichedPosts,
+          OsaPosts: enrichedPosts,
         }
 
         return data
